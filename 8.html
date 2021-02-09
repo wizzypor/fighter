@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.figher{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			left: 100px;
+			top: 500px;
+			transition: 0.5s
+		}
+		.btn {
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<img src="up.png" class="btn up" style="margin-left: 110px">
+	<div style="display: flex">
+		<img src="left.png" class="btn left">
+		<img src="down.png" class="btn down" style="margin-left: 10px">
+		<img src="right.png" class="btn right" style="margin-left: 10px">
+	</div>
+	<img src="sprite.png" class="figher">
+	<script>
+		//8. Управляй бойцом, используя стрелки. 
+		let left = 80
+		let right = 120
+		let up = 480
+		let down = 520
+		document.querySelector('.up').onclick=function(){
+			document.querySelector('.figher').style.top = up+'px'
+			up -= 20
+			down -=20
+		}
+		document.querySelector('.down').onclick=function(){
+			document.querySelector('.figher').style.top = down+'px'
+			down += 20
+			up += 20
+		}
+		document.querySelector('.left').onclick=function(){
+			document.querySelector('.figher').style.left = left+'px'
+			left -= 20
+			right -= 20
+		}
+		document.querySelector('.right').onclick=function(){
+			document.querySelector('.figher').style.left = right+'px'
+			left += 20
+			right += 20
+		}
+	</script>
+</body>
+</html>
